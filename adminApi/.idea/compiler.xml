@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="wcaa-wxapp-api" />
+        <module name="wcaa-wxapp-common" />
+        <module name="wcaa-wxapp-mapper" />
+        <module name="wcaa-wxapp-pojo" />
+        <module name="wcaa-wxapp-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="wcaa-wxapp" target="1.8" />
+      <module name="wcaa-wxapp-api" target="1.8" />
+      <module name="wcaa-wxapp-common" target="1.8" />
+      <module name="wcaa-wxapp-mapper" target="1.8" />
+      <module name="wcaa-wxapp-pojo" target="1.8" />
+      <module name="wcaa-wxapp-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

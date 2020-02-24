@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/wcaa-wxapp.iml" filepath="$PROJECT_DIR$/wcaa-wxapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wcaa-wxapp-api/wcaa-wxapp-api.iml" filepath="$PROJECT_DIR$/wcaa-wxapp-api/wcaa-wxapp-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wcaa-wxapp-common/wcaa-wxapp-common.iml" filepath="$PROJECT_DIR$/wcaa-wxapp-common/wcaa-wxapp-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wcaa-wxapp-mapper/wcaa-wxapp-mapper.iml" filepath="$PROJECT_DIR$/wcaa-wxapp-mapper/wcaa-wxapp-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wcaa-wxapp-pojo/wcaa-wxapp-pojo.iml" filepath="$PROJECT_DIR$/wcaa-wxapp-pojo/wcaa-wxapp-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wcaa-wxapp-service/wcaa-wxapp-service.iml" filepath="$PROJECT_DIR$/wcaa-wxapp-service/wcaa-wxapp-service.iml" />
+    </modules>
+  </component>
+</project>
