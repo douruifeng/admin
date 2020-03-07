@@ -85,30 +85,24 @@ export const constantRoutes = [
  */
 export const asyncRoutes = [
   {
-    path: '/error',
+    path: '/manage',
     component: Layout,
-    redirect: 'noRedirect',
-    name: 'ErrorPages',
+    name: '人员管理',
+    alwaysShow: true,
     meta: {
-      title: 'Error Pages',
-      icon: '404'
+      title: '人员管理',
+      icon: 'user',
+      roles: ['superadmin']
     },
     children: [
       {
-        path: '401',
-        component: () => import('@/views/error-page/401'),
-        name: 'Page401',
-        meta: { title: '401', noCache: true }
-      },
-      {
-        path: '404',
-        component: () => import('@/views/error-page/404'),
-        name: 'Page404',
-        meta: { title: '404', noCache: true }
+        path: 'index',
+        component: () => import('@/views/manage/index'),
+        name: 'index',
+        meta: { title: '管理列表', icon: 'list', roles: ['superadmin'] }
       }
     ]
   },
-
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]

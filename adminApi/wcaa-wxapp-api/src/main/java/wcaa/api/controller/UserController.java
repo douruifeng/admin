@@ -1,23 +1,28 @@
 package wcaa.api.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiOperation;
+
+import io.swagger.annotations.*;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Value;
+import wcaa.Vo.PageResult;
+import wcaa.pojo.User;
+import wcaa.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import wcaa.utils.JSONResult;
 import java.io.*;
+import java.util.List;
 
-
+@CrossOrigin
 @RestController
 @Api(value = "用户相关业务的接口",tags = "用户相关业务的接口")
 @RequestMapping("/user")
 public class UserController extends BasicController{
 
+    @Autowired
+    private userService userService;
 
     @ApiOperation(value = "用户上传头像", notes = "用户上传接口")
     @ApiImplicitParam(name="userId",value="用户ID",dataType="string",required = true)
@@ -96,19 +101,13 @@ public class UserController extends BasicController{
         return JSONResult.ok(SaveFilesDB);
     }
 
-    @ApiOperation(value = "用户信息", notes = "用户信息查询接口")
-    @ApiImplicitParam(name="userId",value="用户ID",dataType="string",required = true,paramType = "query")
-    @PostMapping("/query")
-    public JSONResult QueryUser(String userId) {
-        System.out.print(userId);
-        if(StringUtils.isBlank(userId))
-        {
-            return JSONResult.errorMsg("用户ID不能为空");
-        }
+    @ApiOperation(value = "管理员信息", notes = "管理员信息查询接口")
+    @GetMapping("/list")
+    public JSONResult QueryUser(@ApiParam @RequestParam (value="page",required = false,defaultValue = "1") String page,
+                                @ApiParam @RequestParam (value="limit",required = false,defaultValue = "20") String limit,
+                                @ApiParam @RequestParam (value="sort",required = false,defaultValue = "%2Bid") String sort) {
 
-        //User user = userService.QueryUser(userId);
-        //UserVo userVo = new UserVo();
-        //BeanUtils.copyProperties(user,userVo);
-        return JSONResult.ok();//userVo
+        PageResult pageResult = userService.selePage(page,limit);
+        return JSONResult.ok(pageResult);
     }
 }
